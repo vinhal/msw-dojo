@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
 import todoApi from "../../services/todoApi";
 import "./todo.css";
 
@@ -31,6 +32,12 @@ function Todo({ userEmail }) {
             </li>
           ))}
         </ul>
+
+        {!todos.length && (
+          <div className="todo_loading">
+            <ReactLoading type="balls" color="#cccccc" />
+          </div>
+        )}
       </section>
     </div>
   );

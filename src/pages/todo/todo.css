@@ -46,6 +46,14 @@
   width: 100%;
 }
 
+.todo_loading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 20vw;
+}
+
 label {
   cursor: pointer;
   font-size: 0.82rem;
