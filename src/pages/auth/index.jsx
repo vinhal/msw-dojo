@@ -8,16 +8,13 @@ function Auth({ onLogin }) {
   const onSubmit = (ev) => {
     ev.preventDefault();
 
-    const login = ev.target.login.value;
-    const password = ev.target.password.value;
+    const login = ev.target.elements.login.value;
+    const password = ev.target.elements.password.value;
 
     authApi
       .login(login, password)
-      .then((resp) => {
-        console.log('dlfkjsdf', resp)
-        onLogin(login)
-      })
-      .catch(setError);
+      .then(() => onLogin(login))
+      .catch(err => setError(err.message));
   };
 
   return (
@@ -43,7 +40,7 @@ function Auth({ onLogin }) {
         <input type="submit" className="auth__input" value="Entrar" />
       </form>
 
-      {error && <p className="auth__error">{error.message}</p>}
+      {error && <p className="auth__error">{error}</p>}
     </div>
   );
 }

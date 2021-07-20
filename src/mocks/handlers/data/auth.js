@@ -1,4 +1,4 @@
-export const defaultResponse = {
+export const userLoginSuccess = {
   userId: 212
 }
 

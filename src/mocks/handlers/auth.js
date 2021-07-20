@@ -1,4 +1,4 @@
-import { defaultResponse, unauthorizedResponse, userNotFoundResponse } from "./data/auth";
+import { userLoginSuccess, unauthorizedResponse, userNotFoundResponse } from "./data/auth";
 
 export const handleLogin = (req, res, ctx) => {
   const { email } = req.body;
@@ -19,6 +19,6 @@ export const handleLogin = (req, res, ctx) => {
 
   return res(
     ctx.status(200),
-    ctx.json(defaultResponse)
+    ctx.json(userLoginSuccess)
   );
 };

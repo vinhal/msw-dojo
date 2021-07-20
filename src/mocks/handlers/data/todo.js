@@ -1,9 +1,7 @@
-export const simpleTask = [
-  {
-    title: "Default Task",
-    description: "Lorem ipsum dolor sit amet.",
-  },
-];
+export const simpleTask = {
+  title: "Default Task",
+  description: "Lorem ipsum dolor sit amet.",
+};
 
 export const defaultResponse = [
   simpleTask,
@@ -23,6 +21,7 @@ export const defaultResponse = [
   },
   {
     title: "Task 4",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nisl eget eros tincidunt eleifend. Ut eu enim eu neque ornare consectetur sit amet vestibulum leo.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nisl eget eros tincidunt eleifend. Ut eu enim eu neque ornare consectetur sit amet vestibulum leo.",
   },
 ];
