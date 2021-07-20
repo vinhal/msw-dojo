@@ -37,7 +37,7 @@ function Auth({ onLogin }) {
           className="auth__input auth__password"
         />
 
-        <input type="submit" className="auth__input" value="Log In" />
+        <input type="submit" className="auth__input" value="Entrar" />
       </form>
 
       {error && <p className="auth__error">{error.message}</p>}

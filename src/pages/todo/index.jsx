@@ -2,33 +2,12 @@ import React, { useEffect, useState } from "react";
 import todoApi from "../../services/todoApi";
 import "./todo.css";
 
-const mockedData = [
-  {
-    title: "Apresentar as tretas",
-    description: "Descrever/Aprofundar os trem tudo",
-  },
-  {
-    title: "Apresentar as tretas",
-    description:
-      "Descrever/Aprofundar os trem tudo Descrever/Aprofun trem tudo Descrever/Aprofundar os trem tudo",
-  },
-  {
-    title: "Apresentar as tretas",
-    description:
-      "Descrever/Aprofundar os trem tudo Descrever/Aprofun trem tudo Descrever/Aprofundar os trem tudo",
-  },
-  {
-    title: "Apresentar as tretas",
-    description: "Descrever/Aprofundar os trem tudo",
-  },
-]
-
-function Todo() {
+function Todo({ userEmail }) {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    todoApi.list().then(() => setTodos(mockedData))
-  }, []);
+    todoApi.list(userEmail).then(setTodos);
+  }, [userEmail]);
 
   return (
     <div className="frame">

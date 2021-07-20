@@ -8,7 +8,11 @@ function App() {
 
   return (
     <div className="frame">
-      {loggedUser ? <Todo /> : <Auth onLogin={setLoggedUser} />}
+      {loggedUser ? (
+        <Todo userEmail={loggedUser} />
+      ) : (
+        <Auth onLogin={setLoggedUser} />
+      )}
     </div>
   );
 }
