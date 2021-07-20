@@ -13,8 +13,11 @@ function Auth({ onLogin }) {
 
     authApi
       .login(login, password)
-      .then(() => onLogin(login))
-      .catch(() => setError({ message: "error" }));
+      .then((resp) => {
+        console.log('dlfkjsdf', resp)
+        onLogin(login)
+      })
+      .catch(setError);
   };
 
   return (

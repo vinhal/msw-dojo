@@ -1,8 +1,11 @@
 import { baseApi } from "./conf/apis";
-import { handleLogin } from "./handlers/auth";
-import { handleListTodos } from "./handlers/todo";
+import * as authHandler from "./handlers/auth";
+import * as todoHandler from "./handlers/todo";
 
 export const handlers = [
-  baseApi.post("/login", handleLogin, false),
-  baseApi.post("/todo/:userId", handleListTodos),
+  // AUTH
+  baseApi.post("/login", authHandler.handleLogin),
+  
+  // TODOS
+  baseApi.get("/todo/:user", todoHandler.handleListTodos),
 ];

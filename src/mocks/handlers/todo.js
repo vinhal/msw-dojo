@@ -1,15 +1,16 @@
+import resp from "../conf/resp";
 import { defaultResponse } from "./data/todo";
 
-export const handleListTodos = (req, res, ctx) => {
+export const handleListTodos = (req) => {
   const { user } = req.params;
 
   if (user === "zezim") {
-    return res(ctx.status(200), ctx.json(defaultResponse));
+    return resp(200, defaultResponse);
   }
 
-  if (user === "vinhal") {
-    return res(ctx.status(200), ctx.json(defaultResponse));
+  if (user === "lucas") {
+    return resp(200, defaultResponse);
   }
-
-  return res(ctx.status(200), ctx.json(defaultResponse));
+  
+  return resp(200, defaultResponse);
 };

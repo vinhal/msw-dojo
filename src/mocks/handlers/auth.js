@@ -1,3 +1,5 @@
+import { defaultResponse, unauthorizedResponse, userNotFoundResponse } from "./data/auth";
+
 export const handleLogin = (req, res, ctx) => {
   const { email } = req.body;
 
@@ -6,23 +8,17 @@ export const handleLogin = (req, res, ctx) => {
   if (email === "joao")
     return res(
       ctx.status(401),
-      ctx.json({
-        message: "Erro na autenticação do usuário",
-      })
+      ctx.json(unauthorizedResponse)
     );
 
   if (email === "zezim")
     return res(
       ctx.status(404),
-      ctx.json({
-        message: "Usuário não encontrado",
-      })
+      ctx.json(userNotFoundResponse)
     );
 
   return res(
     ctx.status(200),
-    ctx.json({
-      userId: 389,
-    })
+    ctx.json(defaultResponse)
   );
 };
