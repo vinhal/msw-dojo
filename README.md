@@ -8,6 +8,8 @@ DOC: [Documentação do MSW](https://mswjs.io/docs/getting-started)
 
     yarn add msw --dev
 
+///
+
 ### `Definir Mocks`
 
 Crie uma pasta `src/mocks`
@@ -41,7 +43,6 @@ Utilize o CLI do msw para criar o service worker e definir seu apontamento no pa
 
     npx msw init public/ --save
 
-
 ### `Configurar o Worker`
 
 Crie um arquivo para configurar o worker `src/mocks/browser.js`
@@ -55,7 +56,7 @@ Configure-o:
 
 ### `Iniciar o Worker`
 
-No entrypoint da aplicação 
+No entrypoint da aplicação
 
     import React from 'react'
     import ReactDOM from 'react-dom'
@@ -69,9 +70,10 @@ No entrypoint da aplicação
     ReactDOM.render(<App />, document.getElementById('root'))
 
 Passar { onUnhandledRequest: 'bypass' } como parâmetro para o worker.start() caso não queira os warnings sobre endpoints não mockados
+
 ### `EXTRA: Configurando e utilizando o Server para testes`
 
-No entrypoint da aplicação 
+No entrypoint da aplicação
 
     import { rest } from 'msw'
     import { setupServer } from 'msw/node'
@@ -107,9 +109,7 @@ No entrypoint da aplicação
             }),
         )
         // Test here
-    })  
-
-
+    })
 
 ## ----- Request -----
 
@@ -121,8 +121,8 @@ No entrypoint da aplicação
 
     const userId = req.url.searchParams.get('id')
 
-
 ## ----- Response -----
+
 ### Headers
 
     ctx.set('Content-Type', 'application/hal+json')
@@ -137,6 +137,7 @@ No entrypoint da aplicação
       firstName: 'John',
       age: 32,
     })
+
 ### Delay
 
     ctx.delay(2000)
@@ -144,7 +145,6 @@ No entrypoint da aplicação
 ### Body (não aplica content-type)
 
     ctx.body('text-body')
-
 
 ## ----- Composition -----
 
@@ -156,7 +156,7 @@ Definição:
         context.delay('real'),
     ])
 
-Uso: 
+Uso:
 
     import { rest } from 'msw'
     import { delayedResponse } from './conf/delayed-response'
