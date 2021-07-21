@@ -68,7 +68,7 @@ No entrypoint da aplicação
 
     ReactDOM.render(<App />, document.getElementById('root'))
 
-
+Passar { onUnhandledRequest: 'bypass' } como parâmetro para o worker.start() caso não queira os warnings sobre endpoints não mockados
 ### `EXTRA: Configurando e utilizando o Server para testes`
 
 No entrypoint da aplicação 
@@ -153,7 +153,7 @@ Definição:
     import { createResponseComposition, context } from 'msw'
 
     export const delayedResponse = createResponseComposition(null, [
-    context.delay('real'),
+        context.delay('real'),
     ])
 
 Uso: 
