@@ -76,7 +76,14 @@ No entrypoint da aplicação
     import { rest } from 'msw'
     import { setupServer } from 'msw/node'
 
-    const server = setupServer()
+    const server = setupServer(
+        rest.post('/login', (req, res, ctx) => {
+            return res(
+                ctx.status(200),
+                ctx.json({ name: 'Jeca' }),
+            )
+        })
+    )
 
     beforeAll(() => {
         server.listen()
