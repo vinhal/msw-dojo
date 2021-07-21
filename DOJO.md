@@ -8,13 +8,11 @@ Adicionar uma API mock ao projeto, buscando uma estrutura que facilite o seu uso
 
 Uma estrutura de mocks que me permita/seja:
 
-- [ ] Handlers devem ser simples
 - [ ] Fácil alteração e manutenção — `visualmente e estruturalmente`
 - [ ] Esteja preparada para uma grande quantidade de mocks
 - [ ] Multi-API (estruturada para aceitar várias APIs)
 - [ ] Consigo utilizar parte da estrutura nos testes
 - [ ] Consiga ativar ou inativar o mock de um endpoint facilmente
-
 
 ## `Mock - Aplicação`
 
